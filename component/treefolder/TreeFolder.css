@@ -1,0 +1,186 @@
+:root {
+  --bg-dark: #1e1e1e;
+  --bg-header: #2d2d30;
+  --bg-hover: #3e3e42;
+  --text-color: #ffffff;
+  --border-color: #3c3c3c;
+  --icon-size: 12px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+}
+
+.tree-folder {
+  width: 250px;
+  background-color: var(--bg-dark);
+  height: 100%;
+  overflow: hidden;
+}
+
+/* === HEADER === */
+.tree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 8px;
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.folder-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.folder-name i {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+  transform: rotate(-90deg);
+}
+
+.folder-action {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 2px;
+}
+
+.action-btn i {
+  font-size: 14px;
+}
+
+/* === TREE === */
+.treefolder-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.treefolder-item {
+  width: 100%;
+}
+
+.treefolder-item-title {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  width: 100%;
+  cursor: pointer;
+  gap: 6px;
+  user-select: none;
+}
+.treefolder-item-title input {
+  height: 100%;
+  padding: 2px 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 200px;
+}
+.treefolder-item-title input.editting {
+  border: 1px solid #000;
+}
+.treefolder-item-title input[data-is-disable="true"] {
+  pointer-events: none;
+  user-select: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;       
+}
+.treefolder-children {
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.treefolder-open-children > .treefolder-children {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.treefolder-open-children > .treefolder-item-title .treefolder-item-icon.folder-icon {
+  transform: rotate(90deg);
+}
+.treefolder-item-icon.folder-icon {
+  transition: transform .3s ease;
+}
+.treefolder-item-title.focus {
+  background-color: var(--bg-hover);
+}
+.treefolder-item-title:hover {
+  background-color: var(--bg-hover);
+}
+
+.treefolder-indent {
+  width: 8px;
+  min-width: 8px;
+  border-left: 1px solid var(--border-color);
+  height: 100%;
+  margin-right: 4px;
+}
+
+/* === ICON STYLE === */
+
+.treefolder-item-title i {
+  font-size: var(--icon-size);
+  min-width: var(--icon-size);
+}
+
+/* === FILE TYPE COLORS === */
+.treefolder-item-title .fa-js {
+  color: #f0db4f;
+}
+.treefolder-item-title .fa-html5 {
+  color: #e34c26;
+}
+.treefolder-item-title .fa-css3-alt {
+  color: #2965f1;
+}
+.treefolder-item-title .fa-image {
+  color: #c586c0;
+}
+.treefolder-item-title .fa-file-lines {
+  color: #cccccc;
+}
+.treefolder-item-title .fa-file {
+  color: #999999;
+}
+
+/* === FOLDER ICON === */
+.treefolder-item.folder i.fa-chevron-right {
+  color: #bbbbbb;
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* === FILE SPECIFIC === */
+.treefolder-item.file-item span {
+  color: #cccccc;
+}

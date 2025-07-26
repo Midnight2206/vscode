@@ -1,0 +1,97 @@
+{
+  "treeFolder": [
+    {
+      "root": "VSCODE",
+      "id": "0",
+      "children": [
+        {
+          "name": "folder 1",
+          "type": "folder",
+          "children": [
+            {
+              "name": "folder 1.1",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "file 1.1.1",
+                  "type": "js"
+                },
+                {
+                  "name": "file 1.1.2",
+                  "type": "html"
+                },
+                {
+                  "name": "file 1.1.3",
+                  "type": "css"
+                }
+              ]
+            },
+            {
+              "name": "folder 1.2",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "1.2.1",
+                  "type": "txt"
+                },
+                {
+                  "name": "1.2.2",
+                  "type": "js"
+                },
+                {
+                  "name": "1.2.3",
+                  "type": "png"
+                }
+              ]
+            },
+            {
+              "name": "folder 1.3",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "name": "s",
+              "type": "folder"
+            },
+            {
+              "name": "dv",
+              "type": "folder"
+            },
+            {
+              "name": "raf",
+              "type": "folder"
+            },
+            {},
+            {},
+            {
+              "name": "dđ",
+              "type": "folder"
+            },
+            {
+              "name": "ddd",
+              "type": ""
+            },
+            {
+              "name": "dd",
+              "type": ""
+            }
+          ]
+        },
+        {
+          "name": "folder 23",
+          "type": "folder",
+          "children": [
+            {
+              "name": "gh.js",
+              "type": "js"
+            },
+            {
+              "name": null,
+              "type": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
