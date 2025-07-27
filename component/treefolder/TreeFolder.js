@@ -66,7 +66,7 @@ export default class TreeFolder {
       // copy: this.copy.bind(this),
       // copyCode: this.copyCode.bind(this),
       // copyPath: this.copyPath.bind(this),
-      delete: this.delete.bind(this)
+      delete: this.delete.bind(this),
     };
   }
 
@@ -357,7 +357,7 @@ export default class TreeFolder {
     );
   }
   rename() {
-    const item = this.item
+    const item = this.item;
     item.name.dataset.isDisable = "false";
     item.name.classList.add("editting");
     item.name.select();
@@ -373,8 +373,6 @@ export default class TreeFolder {
         );
         currentData.name = value;
         currentData.type = type;
-        console.log(currentData);
-        
         fetch("http://localhost:3000/treeFolder/0", {
           method: "PUT",
           headers: {
@@ -388,13 +386,28 @@ export default class TreeFolder {
       () => {
         item.name.dataset.isDisable = "true";
         item.name.classList.remove("editting");
-        item.name.setSelectionRange(0, 0)
-        item.name.blur()
+        item.name.setSelectionRange(0, 0);
+        item.name.blur();
       },
       item.icon
     );
   }
   delete() {
-    
+    const pathParent = this.pathData.slice(0, -1);
+    const currentIndex = this.pathData[this.pathData.length - 1];
+    const parentArray = pathParent.reduce(
+      (acc, key) => acc?.[key].children,
+      this.rootData.children
+    );
+    parentArray.splice(currentIndex, 1);
+    fetch("http://localhost:3000/treeFolder/0", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.rootData),
+    })
+      .then(() => this.render())
+      .catch(() => alert("lỗi"));
   }
 }

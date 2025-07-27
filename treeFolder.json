@@ -2,7 +2,6 @@
   "treeFolder": [
     {
       "root": "VSCODE",
-      "id": "0",
       "children": [
         {
           "name": "folder 1",
@@ -35,10 +34,6 @@
                   "type": "txt"
                 },
                 {
-                  "name": "1.2.2",
-                  "type": "js"
-                },
-                {
                   "name": "1.2.3",
                   "type": "png"
                 }
@@ -57,10 +52,6 @@
               "name": "dv",
               "type": "folder"
             },
-            {
-              "name": "raf",
-              "type": "folder"
-            },
             {},
             {},
             {
@@ -76,22 +67,9 @@
               "type": ""
             }
           ]
-        },
-        {
-          "name": "folder 23",
-          "type": "folder",
-          "children": [
-            {
-              "name": "gh.js",
-              "type": "js"
-            },
-            {
-              "name": null,
-              "type": null
-            }
-          ]
         }
-      ]
+      ],
+      "id": "0"
     }
   ]
 }
